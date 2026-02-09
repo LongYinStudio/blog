@@ -14,7 +14,7 @@ export default defineConfig({
   title: "龙吟博客",
   description: "个人技术博客",
   head: [["link", { rel: "icon", href: "/head.webp" }]],
-  lastUpdated: true,
+  lastUpdated: false,
   markdown: {
     lineNumbers: true,
   },
