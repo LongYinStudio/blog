@@ -1,3 +1,5 @@
+import { execFileSync } from "node:child_process";
+import { resolve } from "node:path";
 import { defineConfig } from "vitepress";
 import HTML from "./catalogue/HTML";
 import IDE from "./catalogue/IDE";
@@ -15,6 +17,41 @@ export default defineConfig({
   description: "个人技术博客",
   head: [["link", { rel: "icon", href: "/head.webp" }]],
   lastUpdated: false,
+  transformPageData(pageData, ctx) {
+    if (!pageData.filePath || pageData.frontmatter.showCreatedAt === false) {
+      return;
+    }
+
+    if (pageData.frontmatter.createdAt) {
+      return;
+    }
+
+    const filePath = resolve(ctx.siteConfig.srcDir, pageData.filePath);
+
+    try {
+      const createdAt = execFileSync(
+        "git",
+        ["log", "--diff-filter=A", "--follow", "--format=%aI", "-1", "--", filePath],
+        {
+          cwd: ctx.siteConfig.root,
+          encoding: "utf-8",
+        }
+      ).trim();
+
+      if (!createdAt) {
+        return;
+      }
+
+      return {
+        frontmatter: {
+          ...pageData.frontmatter,
+          createdAt,
+        },
+      };
+    } catch {
+      return;
+    }
+  },
   markdown: {
     lineNumbers: true,
   },
