@@ -5,7 +5,7 @@ set -euo pipefail
 # 项目配置
 # ==========================================
 PROJECT_NAME="blog"                # 项目名称（用于显示）
-REMOTE_HOST="jd"                   # 远程服务器（SSH别名或user@ip）
+REMOTE_HOST="al"                   # 远程服务器（SSH别名或user@ip）
 REMOTE_PATH="/var/www/html/blog"   # 远程部署路径
 # ==========================================
 
