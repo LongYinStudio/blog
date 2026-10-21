@@ -11,4 +11,8 @@ export default [
     text: "git message type",
     link: "/OTHERS/gitMsg.md",
   },
+  {
+    text: "VitePress 文章发布时间",
+    link: "/OTHERS/vitepress-created-at.md",
+  },
 ];
