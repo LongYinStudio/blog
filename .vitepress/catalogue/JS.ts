@@ -11,4 +11,8 @@ export default [
     text: "IntersectionObserver",
     link: "/JS/intersection-observer.md",
   },
+  {
+    text: "ResizeObserver",
+    link: "/JS/resize-observer.md",
+  },
 ];
