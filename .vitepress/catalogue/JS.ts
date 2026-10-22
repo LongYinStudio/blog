@@ -15,4 +15,8 @@ export default [
     text: "ResizeObserver",
     link: "/JS/resize-observer.md",
   },
+  {
+    text: "AbortController",
+    link: "/JS/abort-controller.md",
+  },
 ];
