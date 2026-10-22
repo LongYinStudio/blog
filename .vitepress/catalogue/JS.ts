@@ -7,4 +7,8 @@ export default [
     text: "扫码跳转小程序",
     link: "/JS/miniprogram-qrcode.md",
   },
+  {
+    text: "IntersectionObserver",
+    link: "/JS/intersection-observer.md",
+  },
 ];
