@@ -7,4 +7,8 @@ export default [
     text: "IntelliJ IDEA",
     link: "/IDE/IDEA",
   },
+  {
+    text: "suda.nvim",
+    link: "/IDE/suda-nvim",
+  },
 ];
